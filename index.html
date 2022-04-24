@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BAC Credomatic:</title>
     <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/lib/message/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap" rel="stylesheet">
@@ -52,19 +53,13 @@
                 <div class="contact__wrapper-form">
                     <h5>- Darse de alta -</h5>
                     <div id="message">
-                        <div class="message">
-                            <div class="message__ico message__ico--error"></div>
-                            <p class="message__text">
-                                Formulario enviado con exito.
-                            </p>
-                            <button class="message__close"></button>
-                        </div>
+                        
                     </div>
-                    <form class="contact__form">
+                    <div class="contact__form" id="form">
                         <input type="text" id="name" class="input-form" placeholder="Nombre" required>
                         <input type="email" id="email" class="input-form" placeholder="Correo electrónico" required>
-                        <button type="submit" class="button button--secondary">Enviar</button>
-                    </form>
+                        <button  class="button button--secondary" onclick="sendForm()">Enviar</button>
+                    </div>
                 </div>
         </div>
     </section>
@@ -72,9 +67,17 @@
 <footer class="footer">
     <p class="footer__text">Todos los derechos reservados. <span id="year"></span> © BAC credomatic International Bank.</p>
 </footer>
+<script src="src/lib/message/script.js"></script>
 <script>
     const currentTime = new Date();
     document.getElementById('year').innerHTML = currentTime.getFullYear();
+    const message = new Message('message','form');
+
+    const sendForm = () => {
+        if(message.valid()){
+            console.log('...enviando mensaje')
+        }
+    }
 </script>
 </body>
 </html>

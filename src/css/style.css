@@ -7,21 +7,21 @@
 }
 
 :root{
-    --color-primary: #CF0027;
     --color-primary-contrast: #FFFFFF;
-    --color-secondary: #F1F1F2;
+    --color-primary: #CF0027;
     --color-secondary-dark:#6D6E71;
     --color-secondary-light:#d6d5d5;
+    --color-secondary: #F1F1F2;
     --space-l: 3.2rem;
     --space-m: 1.6rem;
     --space-s: 0.8em;
 }
 
 html {
-    font-size: 62.5%;
-    overflow-x: hidden;
     font-family: 'Open Sans', sans-serif;
+    font-size: 62.5%;
     min-height: 100%;
+    overflow-x: hidden;
     position: relative;
 }
 
@@ -47,27 +47,28 @@ button{
 h1{
     font-size: 3.6rem;
     font-weight: 500;
+    line-height: 3.6rem;
 }
 
 h2{
+    color: #000;
     font-size: 3.6rem;
     font-weight: 600;
-    color: #000;
     margin-bottom: var(--space-m);
 }
 
 h5{
+    color: #000;
     font-size: 1.8rem;
     font-weight: 600;
-    color: #000;
     margin-bottom: var(--space-m);
 }
 
 .header{
-    display: flex;
-    justify-content: center;
     align-items: center;
     background-color: var(--color-primary-contrast);
+    display: flex;
+    justify-content: center;
     padding: var(--space-m);
 }
 
@@ -90,17 +91,17 @@ h5{
 }
 
 .input-form{
-    border:1px solid var(--color-secondary);
-    width: calc(100% - 3.4rem);
     border: 0;
-    padding: var(--space-m);
+    border:1px solid var(--color-secondary);
     color: var( --color-secondary-dark);
     margin-bottom: var(--space-m);
-    transition: all .2s ease-out
+    padding: var(--space-m);
+    transition: all .2s ease-out;
+    width: calc(100% - 3.4rem);
 }
 .input-form:focus{
+    border-color:1px solid var(--color-secondary-dark);
     outline:0;
-    border-color:var(--color-secondary-dark);
 }
 
 .container{
@@ -110,49 +111,49 @@ h5{
 
 
 .banner{
-    position: relative;
-    box-sizing: content-box;
-    padding: var(--space-l) var(--space-m);  
     background-color: var(--color-primary);
-    color:var(--color-primary-contrast);
     background-image: url('../images/pattern_bg.png');
+    background-position: center;
     background-repeat: repeat;
     background-size:contain;
-    background-position: center;
+    box-sizing: content-box;
+    color:var(--color-primary-contrast);
+    padding: var(--space-l) var(--space-m);  
+    position: relative;
 }
 
 .banner__container{
-    position: relative;
-    display: flex;
     align-items: flex-start;
-    justify-content: center;
+    display: flex;
     flex-direction: column; 
+    justify-content: center;
+    position: relative;
     text-align: left;
 }
 
 .banner__description{
-    position: relative;
-    font-weight: 400;
-    font-style: normal;
-    margin-top: var(--space-l);
-    margin-bottom: var(--space-l);
     font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
     line-height: 3rem;
+    margin-bottom: var(--space-l);
+    margin-top: var(--space-l);
+    position: relative;
 }
 
 .banner__link{
-    position: relative;
     margin-bottom: var(--space-m);
     margin-top: var(--space-m);
-    width: 100%;
+    position: relative;
     text-align: right;
+    width: 100%;
 }
 
 
 .contact{
+    background-color: var(--color-secondary);
     box-sizing: content-box;
     padding: var(--space-l) var(--space-m);  
-    background-color: var(--color-secondary);
 }
 
 .contact__container{
@@ -166,9 +167,9 @@ h5{
 }
 
 .contact__information{
-    padding-bottom: var(--space-l);
-    margin-bottom: var(--space-l);
     border-bottom: 1px solid var(--color-secondary-light);
+    margin-bottom: var(--space-l);
+    padding-bottom: var(--space-l);
 }
 
 .contact__description{
@@ -192,22 +193,22 @@ h5{
 }
 
 .buttons-social{
-    margin-top: var(--space-l);
-    list-style: none;
     display: flex;
+    list-style: none;
+    margin-top: var(--space-l);
 }
 
 .buttons-social__item{
-    margin: 0;
-    width: 4rem;
-    height: 4rem;
-    padding: 1rem;
-    box-sizing: border-box;
-    background-color: var(--color-primary);
-    margin-right: var(--space-m);
-    display: flex;
-    justify-content: center;
     align-items: center;
+    background-color: var(--color-primary);
+    box-sizing: border-box;
+    display: flex;
+    height: 4rem;
+    justify-content: center;
+    margin: 0;
+    margin-right: var(--space-m);
+    padding: 1rem;
+    width: 4rem;
 }
 
 .buttons-social__image{
@@ -216,13 +217,13 @@ h5{
 
 .footer{
     background-color: var(--color-primary-contrast);
-    position: relative;
     bottom: 0;
+    box-sizing: border-box;
     padding: var(--space-m);
+    padding: var(--space-m);
+    position: relative;
     text-align: center;
     width: 100%;
-    padding: var(--space-m);
-    box-sizing: border-box;
 }
 
 .footer__text{
@@ -230,66 +231,11 @@ h5{
     font-size: 1.4rem;
 }
 
-.message{
-    width: 100%;
-    background-color: #FFF;
-    margin-bottom: 1.6rem;
-    display: flex;
-    padding: 0;
-    align-items: center;
-    justify-content: space-between;
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.16);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.16);
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.16);
-    transition: all 0.3s;
-}
-
-.message__ico{
-    width: 4rem;
-    height: 4rem;
-}
-
-.message__text{
-    width: calc(100% - 8rem);
-    padding-left: 16px;
-    box-sizing: border-box;
-    text-align: left;
-    font-size: 14px;
-    color: #6D6E71;
-}
-
-.message__close{
-    width: 4rem;
-    height: 4rem;
-    border: 0;
-    background-color: transparent;
-    background-image: url('../images/close.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 1.2rem;
-
-}
-.message__ico--success{
-    background-color: #2A9446;
-    background-image: url('../images/check.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 1.5rem;
-}
-
-.message__ico--error{
-    background-color: #E4002B;
-    background-image: url('../images/error.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 1.5rem;
-}
-
 
 @media (min-width: 768px) {
 
     body{
-        margin-bottom: 6rem;
+        margin-bottom: 5rem;
     }
 
     .banner{
@@ -314,9 +260,9 @@ h5{
     }
 
     .contact__information{
-        padding-bottom: 0;
-        margin-bottom: 0;
         border-bottom: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
 
     .contact__wrapper-form,
