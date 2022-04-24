@@ -11,9 +11,10 @@
     --color-primary-contrast: #FFFFFF;
     --color-secondary: #F1F1F2;
     --color-secondary-dark:#6D6E71;
-    --space32: 3.2rem;
-    --space24: 2.4rem;
-    --space16: 1.6rem;
+    --color-secondary-light:#d6d5d5;
+    --space-l: 3.2rem;
+    --space-m: 1.6rem;
+    --space-s: 0.8em;
 }
 
 html {
@@ -26,7 +27,6 @@ html {
 
 body {
     margin: 0;
-    margin-bottom: 6rem;
 }
 
 a{
@@ -53,14 +53,14 @@ h2{
     font-size: 3.6rem;
     font-weight: 600;
     color: #000;
-    margin-bottom: var(--space16);
+    margin-bottom: var(--space-m);
 }
 
 h5{
     font-size: 1.8rem;
     font-weight: 600;
     color: #000;
-    margin-bottom: var(--space16);
+    margin-bottom: var(--space-m);
 }
 
 .header{
@@ -68,7 +68,7 @@ h5{
     justify-content: center;
     align-items: center;
     background-color: var(--color-primary-contrast);
-    padding: var(--space16);
+    padding: var(--space-m);
 }
 
 .header__image{
@@ -78,7 +78,7 @@ h5{
 .button{
     border: 0;
     font-weight: 600;
-    padding: var(--space16) var(--space32);
+    padding: var(--space-m) var(--space-l);
 }
 .button--primary{
     background-color: var(--color-primary-contrast);
@@ -93,9 +93,9 @@ h5{
     border:1px solid var(--color-secondary);
     width: calc(100% - 3.4rem);
     border: 0;
-    padding: var(--space16);
+    padding: var(--space-m);
     color: var( --color-secondary-dark);
-    margin-bottom: var(--space16);
+    margin-bottom: var(--space-m);
     transition: all .2s ease-out
 }
 .input-form:focus{
@@ -110,8 +110,9 @@ h5{
 
 
 .banner{
+    position: relative;
     box-sizing: content-box;
-    padding: var(--space32) var(--space16);  
+    padding: var(--space-l) var(--space-m);  
     background-color: var(--color-primary);
     color:var(--color-primary-contrast);
     background-image: url('../images/pattern_bg.png');
@@ -121,38 +122,53 @@ h5{
 }
 
 .banner__container{
+    position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column; 
-    text-align: center;
+    text-align: left;
 }
 
 .banner__description{
+    position: relative;
     font-weight: 400;
     font-style: normal;
-    margin-top: var(--space32);
+    margin-top: var(--space-l);
+    margin-bottom: var(--space-l);
     font-size: 1.6rem;
     line-height: 3rem;
 }
 
 .banner__link{
-    margin-top: var(--space32);
+    position: relative;
+    margin-bottom: var(--space-m);
+    margin-top: var(--space-m);
+    width: 100%;
+    text-align: right;
 }
+
 
 .contact{
     box-sizing: content-box;
-    padding: var(--space32) var(--space16);  
+    padding: var(--space-l) var(--space-m);  
     background-color: var(--color-secondary);
 }
 
 .contact__container{
     display: flex;
+    flex-direction: column;
 }
 
 .contact__wrapper-form,
 .contact__information{
-    width: 45%;
+    width: 100%;
+}
+
+.contact__information{
+    padding-bottom: var(--space-l);
+    margin-bottom: var(--space-l);
+    border-bottom: 1px solid var(--color-secondary-light);
 }
 
 .contact__description{
@@ -162,23 +178,21 @@ h5{
 
 .contact__wrapper-form{
     text-align: center;
-    margin-left: 10%;
 }
 
 .contact__form{
     text-align: right;
 }
 .contact__form h5{
-    margin-bottom: var(--space16);
+    margin-bottom: var(--space-m);
 }
 
 .contact__form .button{
-    margin-top: var(--space16);
+    margin-top: var(--space-m);
 }
 
-
 .buttons-social{
-    margin-top: var(--space32);
+    margin-top: var(--space-l);
     list-style: none;
     display: flex;
 }
@@ -190,7 +204,7 @@ h5{
     padding: 1rem;
     box-sizing: border-box;
     background-color: var(--color-primary);
-    margin-right: var(--space16);
+    margin-right: var(--space-m);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -201,22 +215,20 @@ h5{
 }
 
 .footer{
-    position: absolute;
+    background-color: var(--color-primary-contrast);
+    position: relative;
     bottom: 0;
-    height: 2rem;
-    width: 100%;
+    padding: var(--space-m);
     text-align: center;
     width: 100%;
-    padding: var(--space16);
+    padding: var(--space-m);
+    box-sizing: border-box;
 }
 
 .footer__text{
-    color: var( --color-secondary-dark);
+    color: var(--color-secondary-light);
     font-size: 1.4rem;
 }
-
-
-
 
 .message{
     width: 100%;
@@ -271,4 +283,70 @@ h5{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 1.5rem;
+}
+
+
+@media (min-width: 768px) {
+
+    body{
+        margin-bottom: 6rem;
+    }
+
+    .banner{
+        padding: var(--space-l);
+    }
+
+    .banner__container{
+        align-items: center;
+        text-align: center;
+    } 
+
+    .banner__link{
+        text-align: center;
+    }
+
+    .contact{
+        padding: var(--space-l);
+    }
+
+    .contact__container{
+        flex-direction: row;
+    }
+
+    .contact__information{
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: 0;
+    }
+
+    .contact__wrapper-form,
+    .contact__information{
+        width: 47%;
+    }
+
+    .contact__wrapper-form{
+        margin-left: 6%;
+    }
+
+    .footer{
+        position: fixed;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .contact__container{
+        flex-direction: row;
+    }
+
+    .contact__wrapper-form,
+    .contact__information{
+        width: 45%;
+    }
+
+    .contact__wrapper-form{
+        margin-left: 10%;
+    }
+
+    
 }
