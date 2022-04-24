@@ -40,7 +40,6 @@ a{
     font-size: 1.6rem;
 }
 
-
 button{
     cursor: pointer;
 }
@@ -64,7 +63,7 @@ h5{
     margin-bottom: var(--space16);
 }
 
-header{
+.header{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,19 +71,20 @@ header{
     padding: var(--space16);
 }
 
+.header__image{
+    width: 4rem;
+}
+
 .button{
     border: 0;
     font-weight: 600;
     padding: var(--space16) var(--space32);
 }
-
-.button-primary{
+.button--primary{
     background-color: var(--color-primary-contrast);
     color: var(--color-primary);
 }
-
-
-.button-secondary{
+.button--secondary{
     background-color: var(--color-primary);
     color: var(--color-primary-contrast);
 }
@@ -108,10 +108,6 @@ header{
     max-width: 1000px;
 }
 
-header 
-img{
-    width: 4rem;
-}
 
 .banner{
     box-sizing: content-box;
@@ -124,7 +120,7 @@ img{
     background-position: center;
 }
 
-.banner-container{
+.banner__container{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -132,7 +128,7 @@ img{
     text-align: center;
 }
 
-.banner em{
+.banner__description{
     font-weight: 400;
     font-style: normal;
     margin-top: var(--space32);
@@ -140,7 +136,7 @@ img{
     line-height: 3rem;
 }
 
-.banner-container a{
+.banner__link{
     margin-top: var(--space32);
 }
 
@@ -150,43 +146,44 @@ img{
     background-color: var(--color-secondary);
 }
 
-.contact-container{
+.contact__container{
     display: flex;
 }
 
-.contact-container--wrapper-form,
-.contact-container--information{
+.contact__wrapper-form,
+.contact__information{
     width: 45%;
 }
 
-.contact-container--information p{
+.contact__description{
     color: var( --color-secondary-dark);
     line-height:2.4rem;
 }
 
-.contact-container--wrapper-form{
+.contact__wrapper-form{
     text-align: center;
     margin-left: 10%;
 }
 
-.contact-container--form{
+.contact__form{
     text-align: right;
 }
-.contact-container--form h5{
+.contact__form h5{
     margin-bottom: var(--space16);
 }
 
-.contact-container--form .button{
+.contact__form .button{
     margin-top: var(--space16);
 }
 
-ul.wrapper-buttons{
+
+.buttons-social{
     margin-top: var(--space32);
     list-style: none;
     display: flex;
 }
 
-ul.wrapper-buttons li{
+.buttons-social__item{
     margin: 0;
     width: 4rem;
     height: 4rem;
@@ -199,11 +196,11 @@ ul.wrapper-buttons li{
     align-items: center;
 }
 
-ul.wrapper-buttons a img{
+.buttons-social__image{
     width: 100%;
 }
 
-footer{
+.footer{
     position: absolute;
     bottom: 0;
     height: 2rem;
@@ -213,13 +210,15 @@ footer{
     padding: var(--space16);
 }
 
-footer p{
+.footer__text{
     color: var( --color-secondary-dark);
     font-size: 1.4rem;
 }
 
 
-.wrapper-message{
+
+
+.message{
     width: 100%;
     background-color: #FFF;
     margin-bottom: 1.6rem;
@@ -233,12 +232,12 @@ footer p{
     transition: all 0.3s;
 }
 
-.wrapper-message .ico{
+.message__ico{
     width: 4rem;
     height: 4rem;
 }
 
-.wrapper-message p{
+.message__text{
     width: calc(100% - 8rem);
     padding-left: 16px;
     box-sizing: border-box;
@@ -247,7 +246,7 @@ footer p{
     color: #6D6E71;
 }
 
-.wrapper-message button{
+.message__close{
     width: 4rem;
     height: 4rem;
     border: 0;
@@ -258,7 +257,7 @@ footer p{
     background-size: 1.2rem;
 
 }
-.ico-success{
+.message__ico--success{
     background-color: #2A9446;
     background-image: url('../images/check.svg');
     background-repeat: no-repeat;
@@ -266,7 +265,7 @@ footer p{
     background-size: 1.5rem;
 }
 
-.ico-error{
+.message__ico--error{
     background-color: #E4002B;
     background-image: url('../images/error.svg');
     background-repeat: no-repeat;
